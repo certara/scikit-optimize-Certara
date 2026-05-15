@@ -27,9 +27,10 @@ CLASSIFIERS = ['Intended Audience :: Science/Research',
                'Operating System :: POSIX',
                'Operating System :: Unix',
                'Operating System :: MacOS',
-               'Programming Language :: Python :: 3.6',
-               'Programming Language :: Python :: 3.7',
-               'Programming Language :: Python :: 3.8']
+               'Programming Language :: Python :: 3.11',
+               'Programming Language :: Python :: 3.12',
+               'Programming Language :: Python :: 3.13',
+               'Programming Language :: Python :: 3.14']
 
 
 setup(name='scikit-optimize',
@@ -42,9 +43,10 @@ setup(name='scikit-optimize',
       classifiers=CLASSIFIERS,
       packages=['skopt', 'skopt.learning', 'skopt.optimizer', 'skopt.space',
                 'skopt.learning.gaussian_process', 'skopt.sampler'],
-      install_requires=['joblib>=0.11', 'pyaml>=16.9', 'numpy>=1.13.3',
-                        'scipy>=0.19.1',
-                        'scikit-learn>=0.20.0'],
+      install_requires=['joblib>=0.11', 'pyaml>=16.9',
+                        'numpy>=2.0.0',
+                        'scipy>=1.15.2',
+                        'scikit-learn>=1.5.1'],
       extras_require={
         'plots':  ["matplotlib>=2.0.0"]
         }
