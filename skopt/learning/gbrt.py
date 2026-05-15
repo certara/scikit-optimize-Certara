@@ -45,6 +45,9 @@ class GradientBoostingQuantileRegressor(BaseEstimator, RegressorMixin):
         self.base_estimator = base_estimator
         self.n_jobs = n_jobs
 
+    def __sklearn_tags__(self):
+        return self.base_estimator.__sklearn_tags__()
+
     def fit(self, X, y):
         """Fit one regressor for each quantile.
 
@@ -109,7 +112,7 @@ class GradientBoostingQuantileRegressor(BaseEstimator, RegressorMixin):
 
         elif return_std:
             std_quantiles = [0.16, 0.5, 0.84]
-            is_present_mask = np.in1d(std_quantiles, self.quantiles)
+            is_present_mask = np.isin(std_quantiles, self.quantiles)
             if not np.all(is_present_mask):
                 raise ValueError(
                     "return_std works only if the quantiles during "
